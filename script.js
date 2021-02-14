@@ -5,8 +5,18 @@ function setup() {
 }
 
 function makePageForEpisodes(episodeList) {
-  const rootElem = document.getElementById("root");
-  rootElem.textContent = `Got ${episodeList.length} episode(s)`;
+  const container = document.getElementById("episodes");
+  console.log(episodeList);
+
+  episodeList.forEach(allEpisodes => {
+
+    const img = document.createElement("img");
+    img.setAttribute("src", allEpisodes.image.medium);
+
+    container.appendChild(img);
+
+  });
+
 }
 
 window.onload = setup;
